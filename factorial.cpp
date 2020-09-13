@@ -21,21 +21,25 @@ int main()
 void factorial(long long int k, long long int g, long long int sum)
 {
 	if (k > 0 && k <= 20) {
-		for (long long int i = 0; i < g; i++) {
-			if (k == 0) { break; }
-			if (k == (g - 1)) {
-				sum = sum * k;
-				cout <<"SUMMARY : "<< k;
-				--k;
+		if (k == 1) { cout << "SUMMARY :1 "; sum = 1; }
+		else if(k>1){
+			for (long long int i = 0; i < g; i++) {
 
-			}
-			if (k < (g - 1)) {
-				sum = sum * k;
-				cout << " x " << k;
-				--k;
+				if (k == 0) { break; }
 
+				if (k == (g - 1)) {
+					sum = sum * k;
+					cout << "SUMMARY : " << k;
+					--k;
+
+				}
+				if (k < (g - 1)) {
+					sum = sum * k;
+					cout << " x " << k;
+					--k;
+
+				}
 			}
-			
 	
 		}	cout << " = " << sum << endl;
 	}
